@@ -1,0 +1,13 @@
+{
+  "window.zoomLevel": 0,
+  "eslint.alwaysShowStatus": true,
+  "workbench.colorTheme": "Dracula",
+  "css.lint.duplicateProperties": "warning",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "css.validate": false, // Disable css built-in lint
+  "stylelint.enable": true, // Enable sytlelin
+}

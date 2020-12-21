@@ -1,0 +1,53 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.9.0",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "autoprefixer": "^9.8.0",
+    "postcss-cli": "^7.1.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1",
+    "tailwindcss": "^1.4.6"
+  },
+  "scripts": {
+    "build:tailwind": "postcss src/assets/styles/tailwind.css -o src/assets/styles/index.css",
+    "watch:tailwind": "postcss -w src/assets/styles/tailwind.css -o src/assets/styles/index.css",
+    "start": "run-p watch:tailwind start:react",
+    "start:react": "react-scripts start",
+    "prebuild": "npm run build:tailwind",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint --ext .jsx,.js src  --fix"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "npm-run-all": "^4.1.5",
+    "stylelint-config-recommended": "^3.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
