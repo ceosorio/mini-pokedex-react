@@ -1,9 +1,11 @@
-# Init config react project
+# Mini Pokedex
 
-this project have a basic configuration to work with eslint, absolute import and have a folder structure
-The scripts are the scripts available after run create-react-app.
+This is a small Pokedex project using React + Tailwind and consuming the PokeAPI. It is intended as an exercise.
 
-the config is to work with vscode
+# Instalation and Usage
 
-the code use `code --install-extension shinnn.stylelint`
-the code use `code --install-extension bradlc.vscode-tailwindcss`
+1. Clone the repository
+2. Change into the repository directory and run `npm i`
+3. To Test the app, run `npm start`
+
+

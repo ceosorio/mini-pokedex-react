@@ -34,6 +34,7 @@ export default function PokeModal(props) {
               {' '}
               {poke.name}
               <PokeStats stats={poke.stats} />
+              {`With a height of ${poke.height * 10}cm and weight of ${poke.weight / 10}kgs`}
             </div>
           </div>
         </div>
