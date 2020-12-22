@@ -6,6 +6,7 @@ import PokeStats from './PokeStats'
 export default function PokeModal(props) {
   const { onCancel, poke } = props
   useEffect(() => {})
+
   return (
     <div>
       <div
@@ -20,12 +21,17 @@ export default function PokeModal(props) {
                 Base Stats
               </h3>
               <button
-                className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                className="p-1 ml-auto bg-transparent border-0 text-red opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
                 onClick={onCancel}
               >
-                <span className="bg-transparent text-black opacity-5 h-6 w-6 text-2xl block outline-none focus:outline-none">
-                  ×
-                </span>
+                <svg className="h-8 w-8 text-red-500 transition duration-400 ease-in-out hover:text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  {' '}
+                  <circle cx="12" cy="12" r="10" />
+                  {' '}
+                  <line x1="15" y1="9" x2="9" y2="15" />
+                  {' '}
+                  <line x1="9" y1="9" x2="15" y2="15" />
+                </svg>
               </button>
             </div>
             {/* body */}
@@ -35,6 +41,16 @@ export default function PokeModal(props) {
               {poke.name}
               <PokeStats stats={poke.stats} />
               {`With a height of ${poke.height * 10}cm and weight of ${poke.weight / 10}kgs`}
+              <div className="px-6 py-4">
+                {
+                    poke.types.map((type) => (
+                      <span key={type.type.name} className={`inline-block bg-${type.type.name} rounded-lg px-3 py-1 text-sm font-semibold text-gray-200 mr-2`}>
+                        {type.type.name.toUpperCase()}
+                        {' '}
+                      </span>
+                    ))
+                  }
+              </div>
             </div>
           </div>
         </div>

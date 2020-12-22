@@ -17,27 +17,17 @@ export default function PokeInfo(props) {
   }, [])
 
   return (
-    <div className="flex flex-col items-center justify-center bg-white p-4 shadow rounded-lg space-x-4" id={poke.id} key={poke.id}>
+    <div className="inline-block bg-white p-4 shadow rounded-lg space-x-4" id={poke.id} key={poke.id}>
       <div className="inline-flex shadow-lg border border-gray-200 rounded-full overflow-hidden h-40 w-40">
-        <img src={poke.sprites.front_default} alt="pokemon" />
+        <img src={poke.sprites.front_default} alt="pokemon" onClick={handleShowModal} />
       </div>
-      <h2 className="mt-4 font-bold text-xl">{poke.name}</h2>
+      <h2 className="mt-4 font-bold text-xl capitalize">{poke.name}</h2>
       <h6 className="mt-2 text-sm font-medium">
         Number:
         {' '}
         {poke.id}
       </h6>
-
-      <p className="text-xs text-gray-500 text-center mt-3">
-        Types:
-        {' '}
-        {
-                        poke.types.map((type) => (
-                          <p>{type.type.name}</p>
-                        ))
-                      }
-      </p>
-      <button className="rounded-md" onClick={handleShowModal}>More Info</button>
+      {/* <button className="rounded-md" onClick={handleShowModal}>More Info</button> */}
       {showModal && <PokeModal onCancel={handleCloseModal} poke={poke} />}
     </div>
   )
